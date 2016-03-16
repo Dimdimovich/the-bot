@@ -10,7 +10,7 @@ TheType *a,*b,*c;
 char i,k;
 unsigned long j;
 
-srand(time(NULL)); //обновление таблички рандомных значений
+srand(time(NULL)); //Disunderstained commet was here
 
 a=malloc(TheSize);
 a->l=NULL;
