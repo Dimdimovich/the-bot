@@ -10,7 +10,7 @@ TheType *a,*b,*c;
 char i,k;
 unsigned long j;
 
-srand(time(NULL)); //Disunderstained commet was here
+srand(time(NULL)); //Disunderstained commet was here. What did it mean?
 
 a=malloc(TheSize);
 a->l=NULL;
