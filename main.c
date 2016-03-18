@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include "ModuleOne.h"
 #include "ModuleTwo.h"
-//#include "ModuleThree.h"
+//#include "ModuleThree.h" //-didn't work
 #include "Tims ModuleThree.h"
-
+//any difficulties? Watch ReadMe.txt
 int main(){
 TheType *a,*b,*c;
 char i,k;
 unsigned long j;
 
-srand(time(NULL)); //Disunderstained commet was here. What did it mean?
+srand(time(NULL)); //shuffling "random" table (every time it is same)
 
 a=malloc(TheSize);
 a->l=NULL;
@@ -26,13 +26,13 @@ printf("\n");
 
 b=seven(a,i);
 c=b;
-       c->f=10;
-(c=c->l)->f=20;
-(c=c->l)->f=33;
-(c=c->l)->f=41;
-(c=c->l)->f=50;
-(c=c->l)->f=83;
-(c=c->l)->f=13;
+       c->f=10;//3  cherv
+(c=c->l)->f=20;//4  cherv
+(c=c->l)->f=33;//5  kresty
+(c=c->l)->f=41;//6  bubny
+(c=c->l)->f=50;//7  cherv
+(c=c->l)->f=83;//10 kresty
+(c=c->l)->f=13;//3  kresty
 
 ShowMeComb(street(b));
 vivod(b);

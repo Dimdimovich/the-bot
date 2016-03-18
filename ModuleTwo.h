@@ -1,4 +1,4 @@
-TheType* seven(TheType *a, char gambler){
+TheType* seven(TheType *a, char gambler){//returns 5 common & 2 gambler's cards in a array
 TheType *arr, *b;
 char i;
 arr=malloc(TheSize);
