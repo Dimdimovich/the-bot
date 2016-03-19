@@ -1,11 +1,11 @@
 typedef struct TheStruct{
-char f;   //field
-void *l;  //link
+char f=255;   //field
+void *l=NULL;  //link
 } TheType;
 
 const TheSize = sizeof(TheType);
 
-int number(TheType *a){                         //Shows the count of cards
+int number(TheType *a){                         //Shows the count of cards in array
 int n=0;
 while (a&&++n)
     a=a->l;
@@ -23,7 +23,7 @@ for (i=0;i<=12;i++)
        }
     }
 }
-void crempty(TheType *a){                       //Makes pure 52 cardss array
+void crempty(TheType *a){                       //Makes pure 52 cards array
 char i;
 for (i=0;i<51;i++){
     a->f=0;
@@ -70,8 +70,8 @@ a->f=dost;
 
 void vivod(TheType *a){                         //Prints array
 while(a){
-  printf("%6d%2d",a->f/10,a->f%10);                        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  a=a->l;
+  printf("%6d%2d",a->f/10,a->f%10);   //!! fuck it !!
+  a=a->l;// dostoinstvo^   ^mast
 }
 printf("\n");
 }
@@ -91,7 +91,7 @@ m = rand() % 52;
 }
 //The Hash
 for (i=0;i<=51;i++){
-  j=(h*i+m) % 52;
+  j=(h*i+m) % 52;// standart hash: multiply and plussing some random elements
   while (readF(b,j)!=0)
     j=(j+1) % 52;
   writeF(readF(a,i),b,j);
@@ -102,6 +102,7 @@ del(a);
 return b;
 }
 
+//STEPEN
 unsigned long power(unsigned long x, char n){
 if(n)
 return x*=power(x,n-1);
