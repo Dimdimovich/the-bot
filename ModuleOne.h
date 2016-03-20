@@ -1,9 +1,9 @@
 typedef struct TheStruct{
-char f=255;   //field
-void *l=NULL;  //link
+char f;   //field
+void *l;  //link
 } TheType;
 
-const TheSize = sizeof(TheType);
+const int TheSize = sizeof(TheType);
 
 int number(TheType *a){                         //Shows the count of cards in array
 int n=0;
