@@ -1,6 +1,6 @@
 typedef struct TheStruct{
-char f=255;   //field
-void *l=NULL;  //link
+char f;   //field
+void *l;  //link
 } TheType;
 
 const TheSize = sizeof(TheType);
