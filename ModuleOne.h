@@ -11,6 +11,7 @@ while (a&&++n)
     a=a->l;
 return n;
 }
+
 void create(TheType *b){                        //Makes nice 52 card array
 char i,j;
 
@@ -70,11 +71,35 @@ a->f=dost;
 
 void vivod(TheType *a){                         //Prints array
 while(a){
-  printf("%6d%2d",a->f/10,a->f%10);   //!! fuck it !!
-  a=a->l;// dostoinstvo^   ^mast
+    switch (a->f/10) {
+        case 0:  printf("2"); break;
+        case 1:  printf("3"); break;
+        case 2:  printf("4"); break;
+        case 3:  printf("5"); break;
+        case 4:  printf("6"); break;
+        case 5:  printf("7"); break;
+        case 6:  printf("8"); break;
+        case 7:  printf("9"); break;
+        case 8:  printf("10"); break;
+        case 9:  printf("J"); break;
+        case 10:  printf("Q"); break;
+        case 11:  printf("K"); break;
+        case 12:  printf("A"); break;
+        default: printf("GOT ERROR \"%d\" IN \"CASE\"",a->f/10);
+    }
+    switch (a->f%10) {
+        case 0:  printf("H "); break; //Hearts Червы
+        case 1:  printf("D "); break; //Diamonds Бубны
+        case 2:  printf("C "); break; //Clovers Крести
+        case 3:  printf("S "); break; //Spades Пики
+        default: printf("GOT ERROR \"%d\" IN \"CASE\"",a->f%10);
+    }
+   // printf("%6d%2d",a->f/10,a->f%10);   //!! fuck it !!
+    a=a->l;// dostoinstvo^   ^mast
 }
 printf("\n");
 }
+
 TheType* H(TheType *a){                         //Hash
 TheType *b;
 char i,j,h,m;

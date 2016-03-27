@@ -1,22 +1,22 @@
 unsigned long IsStreet(TheType *a){ // input sortV "SEVEN()"
     char i,j=0; //<- just count
     char n=number(a); //n=7 or n=8
-    if (readF(a,0)/10 == 12) writeF(-10,a,n++); //may be wheel 
-    for (i=0; i < n-1; i++) { //just the street 
+    if (readF(a,0)/10 == 12) writeF(-10,a,n++); //may be wheel
+    for (i=0; i < n-1; i++) { //just the street
         if (j == 4) {
             if (n == 8) delLast(a);
-            return (4*16+readF(a,i-4)/10+1)*16*16*16*16;  //street already !check enough 16? ENOUGH! 
-            } 
+            return (4*16+readF(a,i-4)/10+1)*16*16*16*16;  //street already !check enough 16? ENOUGH!
+            }
         if ((readF(a,i)/10 - readF(a,i+1)/10) == 1) j++; //may be street, I believe this
         else
             if (readF(a,i)/10 == (readF(a,i+1)/10)) ; //may be street, may be no...
             else j=0; //:( ohh... street! where are you???
     }
     if (n == 8) delLast(a);
-    return 0;// no wheel, no street :( 
-    } 
-} 
- 
+    return 0;// no wheel, no street :(
+    }
+
+
 unsigned long comb(TheType *a){ // input "SEVEN()"
     unsigned long c=0; //buf
     char i,j;
@@ -64,5 +64,27 @@ unsigned long comb(TheType *a){ // input "SEVEN()"
     }
     return c;
 }
+ //Удобночитаемый вывод: by Tim
+void ShowMeComb(unsigned long c){
+ char i;
+ switch (c/power(16,5)) {
+ case 0:  printf("High Card "); break;
+ case 1:  printf("Pair "); break;
+ case 2:  printf("Two Pairs "); break;
+ case 3:  printf("Kind of a Three "); break;
+ case 4:  printf("Street "); break;
+ case 5:  printf("Flash "); break;
+ case 6:  printf("Full House "); break;
+ case 7:  printf("Quads "); break;
+ case 8:  printf("StreetFlash "); break;
+ case 9:  printf("Royal Flash "); break;
+ default: printf("GOT ERROR \"%d\" IN \"CASE\"",c/power(16,5));
+ }
+ for(i=0;i<5;i++)
+ printf("%3d",c%power(16,(5-i))/power(16,(4-i))-1);
+ printf("\n\n");
+
+ }
+
 
 
